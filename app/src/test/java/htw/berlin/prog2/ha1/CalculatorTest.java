@@ -143,7 +143,8 @@ class CalculatorTest {
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
-    }
+    } // die Methode pressEqualsKey() wird verändert und jetzt erfolgreich funktioniert.
+    // TeilAufgabe3 o
 
 
 
