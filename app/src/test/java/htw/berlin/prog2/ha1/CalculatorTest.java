@@ -146,6 +146,37 @@ class CalculatorTest {
     } // die Methode pressEqualsKey() wird verändert und jetzt erfolgreich funktioniert.
     // TeilAufgabe3 o
 
+    @Test
+    @DisplayName("The value after the decimal point should be displayed continuously on the screen.")
+    void testContinueScreen() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(0);
+        calc.pressDotKey();
+        calc.pressDigitKey(7);
+
+        String expected = "0.7";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+
+
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(8);
+        calc.pressBinaryOperationKey("+");
+        expected = "8.7";   // prüfen Zwischenergebnis
+        actual = calc.readScreen();
+        assertEquals(expected, actual);
+
+        calc.pressDigitKey(2);
+        calc.pressEqualsKey();
+
+        expected = "10.7"; // prüfen kontinuierliche Berechnungen 0.7 + 8 + 2 = 10.7
+        actual = calc.readScreen();
+        assertEquals(expected, actual);
+
+    }
+
 
 
     //TODO hier weitere Tests erstellen
