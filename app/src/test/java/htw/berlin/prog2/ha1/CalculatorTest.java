@@ -88,7 +88,41 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    /**
+     Teilaufgabe 1: Schreiben Sie einen neuen zusätzlichen Test, der eine bisher nicht getestete
+     Funktionalität abdeckt, die bereits funktioniert und der daher direkt grün wird. **/
+    @Test
+    @DisplayName("should reset screen on first press and all values on second press of clear key")
+    void testPressClearKey() {
+        Calculator calc = new Calculator();
+
+        // Test first press
+        calc.pressDigitKey(5);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(5);
+
+        calc.pressClearKey();
+
+        calc.pressDigitKey(1);
+        calc.pressEqualsKey();
+
+        String expected = "6";
+        String actual = calc.readScreen();
+        assertEquals(expected, actual);
+
+        // Test second press
+        calc.pressDigitKey(7);
+        calc.pressBinaryOperationKey("-");
+        calc.pressDigitKey(5);
+
+        calc.pressClearKey();
+        calc.pressClearKey();
+
+        expected = "0";
+        actual = calc.readScreen();
+        assertEquals(expected, actual);
+    }
+
 
     //TODO hier weitere Tests erstellen
 }
-
