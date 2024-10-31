@@ -123,6 +123,29 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    /**
+     Teilaufgabe 2: Schreiben Sie zwei weitere zusätzliche Tests, die zwei unterschiedliche
+     Fehlerkategorien aufdecken (d.h. deren Fehlerursachen in unterschiedlichen Methoden liegen) und
+     somit fehlschlagen. **/
+
+    @Test
+    @DisplayName("should repeat the last operation when equals key is pressed consecutively")
+    void testConsecutiveEqualsKey() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(9);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(3);
+        calc.pressEqualsKey();
+        calc.pressEqualsKey(); // wenn man zweimal Equalskey gedrückt hat.
+
+        String expected = "15"; // 9 + 3 + 3 = 15
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
+
 
     //TODO hier weitere Tests erstellen
 }
