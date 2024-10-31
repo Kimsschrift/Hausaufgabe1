@@ -1,9 +1,11 @@
 package htw.berlin.prog2.ha1;
 
+import com.google.errorprone.annotations.Var;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @DisplayName("Retro calculator")
 class CalculatorTest {
@@ -176,8 +178,28 @@ class CalculatorTest {
         assertEquals(expected, actual);
 
     }
+    // die Methode pressDigitKey() und pressBinaryOperationKey() werden verändert und jetzt erfolgreich funktioniert.
+    // TeilAufgabe3 o
+
+    /**
+     Teilaufgabe 3: Schreiben Sie zwei Bugfixes (also Änderungen der Implementierungsklasse
+     Calculator), so dass die zwei zuvor hinzugefügten Tests erfolgreich durchlaufen. Falls Sie dabei das
+     Verhalten so erweitern, dass es über das im JavaDoc spezifizierte hinausgeht (aber zum Verhalten
+     des Online Calculator passt), dann erweitern Sie bitte auch das JavaDoc entsprechend. **/
 
 
 
-    //TODO hier weitere Tests erstellen
+
+    /**
+     Fushen Sie Ihre Tests & Änderungen auf Ihr eigenes, geforktes Repository,
+     und zwar strukturiert in mindestens drei Commits:
+     z.B. 1. Commit für neuer grüner Test, 2. Commit für neuer roter Test,
+     3. Commit für den Fix zu diesem Test, 4. Commit für weiteren neuen roter Test,
+     5. Commit für Fix zu diesem Test.
+     Stellen Sie zum Abschluss einen Pull Request auf das obere Repository,
+     und zwar vor der oben genannten Deadline.
+     **/
+
+
 }
+
